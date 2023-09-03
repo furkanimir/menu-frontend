@@ -21,9 +21,6 @@ const MenuPage = () => {
   };
 
 
-
-
-
   useEffect(() => {
     fetchData();
   }, []);
