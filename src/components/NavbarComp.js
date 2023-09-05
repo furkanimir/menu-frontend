@@ -7,7 +7,7 @@ import '../cssFiles/NavbarComp.css';
 export const NavbarComp = () => {
     return (
         <div>
-            <Navbar bg="dark" data-bs-theme="dark">
+            <Navbar expand='lg' bg="dark" data-bs-theme="dark">
                 <Navbar.Brand className='ms-3' href="/">
                     <a className='navbar-brand'><img src={logo} style={{ height: '50px', flex: 1, }} />React Menü Projesi</a>
                 </Navbar.Brand>

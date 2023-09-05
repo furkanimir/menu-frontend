@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Card, Col, Container, Image, Modal, Row } from 'react-bootstrap'
 import ItemModal from '../components/ItemModal';
+import '../cssFiles/MenuPage.css'
 
 const MenuPage = () => {
 
@@ -58,34 +59,39 @@ const MenuPage = () => {
       <Container>
 
         {/* Kahvaltılar */}
-        <Card className='my-2' style={{ backgroundColor: '#453433' }}>
+        <Card className='my-2' style={{ backgroundColor: '#453433', background: 'linear-gradient(to right, rgba(189, 155, 60, 0.9), rgba(230, 203, 129, 0.8))' }}>
           <Card.Body>
             <Card.Title style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>Kahvaltılar</Card.Title>
             <Card.Text>
               {kahvaltiItems.map((item, index) => (
-                <Card key={index} className='mb-3' style={{ height: '110px' }}>
+                <Card key={index} className='mb-3'style={{height:'91px'}} >
                   <Card.Title className='mx-2'>{item.header}</Card.Title>
                   <Card.Text className='mx-1'>
-                    <Row>
-                      <Col xs="auto" md="auto" >
-                        <Image src={item.img} style={{ height: '75px', width: '125px' }} />
+                    <Row className='d-flex justify-content-between'>
+                      <Col xs={2} sm={2} md={2} lg={2} >
+                        <Image src={item.img} style={{ height: '50px', width: '75px' }} />
                       </Col>
-                      <Col>
-                        {item.description}
+                      <Col xs={6} sm={6} md={4} lg={3}>
+                        {item.description.length > 30 ? (
+                          <div>{item.description.slice(0, 30)}...</div>
+                        ) : (
+                          <div>{item.description}</div>
+                        )}
                       </Col>
-                      <Col xs="auto" md="auto" className='text-center mx-4'>
-                        {item.price} ₺
+                      {/* altaki colda className='text-center mx-4' */}
+                      <Col xs='auto' sm={2} md={2} lg={2} className='col-lg-2'>
+                        {item.price}₺
                       </Col>
                     </Row>
                   </Card.Text>
                 </Card>
               ))}
             </Card.Text>
-            <Button variant="primary" onClick={handleClick}>Go somewhere</Button>
+            {/* <Button variant="primary" onClick={handleClick}>Go somewhere</Button> */}
           </Card.Body>
         </Card>
         {/* Salatalar */}
-        <Card className='mb-2' style={{ backgroundColor: '#06962d' }}>
+        <Card className='mb-2' style={{ background: 'linear-gradient(to right, rgba(58, 209, 50, 0.9), rgba(96, 209, 90, 0.8))' }}>
           <Card.Body>
             <Card.Title style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Salatalar</Card.Title>
             <Card.Text>
@@ -119,7 +125,7 @@ const MenuPage = () => {
         </Card>
 
         {/* Makarnalar */}
-        <Card className='mb-2' style={{ backgroundColor: '#998806' }}>
+        <Card className='mb-2' style={{ background: 'linear-gradient(to right, rgba(173, 153, 23, 0.9), rgba(171, 154, 43, 0.6))' }}>
           <Card.Body>
             <Card.Title style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Makarnalar</Card.Title>
             <Card.Text>
