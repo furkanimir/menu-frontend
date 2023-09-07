@@ -67,19 +67,19 @@ const MenuPage = () => {
                 <Card key={index} className='mb-3'style={{height:'91px'}} >
                   <Card.Title className='mx-2'>{item.header}</Card.Title>
                   <Card.Text className='mx-1'>
-                    <Row className='d-flex justify-content-between'>
+                    <Row className='justify-content-between'>
                       <Col xs={2} sm={2} md={2} lg={2} >
                         <Image src={item.img} style={{ height: '50px', width: '75px' }} />
                       </Col>
-                      <Col xs={6} sm={6} md={4} lg={3}>
+                      <Col className='ms-3'>
                         {item.description.length > 30 ? (
-                          <div>{item.description.slice(0, 30)}...</div>
+                          <div>{item.description.slice(0, 38)}...</div>
                         ) : (
                           <div>{item.description}</div>
                         )}
                       </Col>
                       {/* altaki colda className='text-center mx-4' */}
-                      <Col xs='auto' sm={2} md={2} lg={2} className='col-lg-2'>
+                      <Col xs={3} sm={2} md={2} lg={2} className='' style={{textAlign:'center '}}>
                         {item.price}₺
                       </Col>
                     </Row>
