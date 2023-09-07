@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Card, Col, Container, Image, Modal, Row } from 'react-bootstrap'
+import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap'
 import ItemModal from '../components/ItemModal';
 import '../cssFiles/MenuPage.css'
 
