@@ -9,7 +9,7 @@ const MenuPage = () => {
 
   const [data, setData] = useState("");
   // const [loading, setLoading] = useState(false);
-  // const apiUrl = 'http://localhost:8080/api/v1/menus/all';
+  const apiUrl = 'http://localhost:8080/api/v1/menus/all';
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -30,7 +30,7 @@ const MenuPage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/v1/menus/all');
+      const response = await fetch(apiUrl);
       const json = await response.json();
       setData(json);
       console.log(data);
@@ -65,30 +65,28 @@ const MenuPage = () => {
           <Card.Body>
             <Card.Title style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>Kahvaltılar</Card.Title>
             <Card.Text>
-              {kahvaltiItems.map((item, index) => (
-                <Card key={index} className='mb-3'style={{height:'91px'}} >
-                  <Card.Title className='mx-2'>{item.header}</Card.Title>
-                  <Card.Text className='mx-1'>
-                    {/* yedek dc'de */}
-                    <Row className='alo-si'>
-                      <div xs={2} sm={2} md={2} lg={2} >
-                        <Image src={item.img} style={{ height: '50px', width: '75px' }} />
-                      </div>
-                      <div xs={4} sm={4} md={4} lg={4} className='ps-2'>
-                        {item.description.length > 36 ? (
-                          <div>{item.description.slice(0, 39)}...</div>
+              <ul class="kahvalti-items-list">
+                {kahvaltiItems.map((item, index) => (
+                  <li class="kahvalti-item" key={index}>
+                    <div class="item-image">
+                      <img src={item.img} alt="Product Image" />
+                    </div>
+                    <div class="item-details">
+                      <div class="item-header">{item.header}</div>
+                      <div class="item-description">
+                        {item.description.length > 55 ? (
+                          <span>{item.description.slice(0, 51)}...</span>
                         ) : (
-                          <div>{item.description}</div>
+                          <span>{item.description}</span>
                         )}
                       </div>
-                      {/* altaki colda className='text-center mx-4' */}
-                      <div xs={3} sm={2} md={2} lg={2} className='' style={{textAlign:'center '}}>
-                        {item.price}₺
-                      </div>
-                    </Row>
-                  </Card.Text>
-                </Card>
-              ))}
+                    </div>
+                    <div class="item-price">
+                      {item.price}₺
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </Card.Text>
             {/* <Button variant="primary" onClick={handleClick}>Go somewhere</Button> */}
           </Card.Body>

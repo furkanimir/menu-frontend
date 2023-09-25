@@ -9,7 +9,7 @@ export const NavbarComp = () => {
         <div>
             <Navbar expand='lg' bg="dark" data-bs-theme="dark">
                 <Navbar.Brand className='ms-2' href="/">
-                    <a className='navbar-brand'><img src={logo} style={{ height: '50px', flex: 1, }} />React Menü Projesi</a>
+                    <a className='navbar-brand'><img src={logo} style={{ height: '50px', flex: 1, }} />Menü Projesi</a>
                 </Navbar.Brand>
                 <Navbar.Toggle className='me-3' aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
