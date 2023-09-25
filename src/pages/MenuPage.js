@@ -9,7 +9,8 @@ const MenuPage = () => {
 
   const [data, setData] = useState("");
   // const [loading, setLoading] = useState(false);
-  const apiUrl = 'http://localhost:8080/api/v1/menus/all';
+  // const apiUrl = 'http://localhost:8080/api/v1/menus/all';
+  const apiUrl= 'https://first-render-qumf.onrender.com/api/v1/menus/all'
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
