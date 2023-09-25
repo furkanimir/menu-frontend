@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/menu-frontend/static/css/main.a6069cd4.css",
+    "main.js": "/menu-frontend/static/js/main.3ebf0560.js",
+    "static/js/787.fb684eb0.chunk.js": "/menu-frontend/static/js/787.fb684eb0.chunk.js",
+    "static/media/squidward_png__by_seanscreations1_dfnpwy4-pre.png": "/menu-frontend/static/media/squidward_png__by_seanscreations1_dfnpwy4-pre.1de08d9e32bd01a8905b.png",
+    "index.html": "/menu-frontend/index.html",
+    "main.a6069cd4.css.map": "/menu-frontend/static/css/main.a6069cd4.css.map",
+    "main.3ebf0560.js.map": "/menu-frontend/static/js/main.3ebf0560.js.map",
+    "787.fb684eb0.chunk.js.map": "/menu-frontend/static/js/787.fb684eb0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a6069cd4.css",
+    "static/js/main.3ebf0560.js"
+  ]
+}
