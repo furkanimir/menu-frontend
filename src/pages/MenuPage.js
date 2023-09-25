@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap'
 import ItemModal from '../components/ItemModal';
 import '../cssFiles/MenuPage.css'
+import '../cssFiles/BirSaniy.css'
+
 
 const MenuPage = () => {
 
@@ -67,21 +69,22 @@ const MenuPage = () => {
                 <Card key={index} className='mb-3'style={{height:'91px'}} >
                   <Card.Title className='mx-2'>{item.header}</Card.Title>
                   <Card.Text className='mx-1'>
-                    <Row className='justify-content-between'>
-                      <Col xs={2} sm={2} md={2} lg={2} >
+                    {/* yedek dc'de */}
+                    <Row className='alo-si'>
+                      <div xs={2} sm={2} md={2} lg={2} >
                         <Image src={item.img} style={{ height: '50px', width: '75px' }} />
-                      </Col>
-                      <Col className='ms-3'>
-                        {item.description.length > 30 ? (
-                          <div>{item.description.slice(0, 38)}...</div>
+                      </div>
+                      <div xs={4} sm={4} md={4} lg={4} className='ps-2'>
+                        {item.description.length > 36 ? (
+                          <div>{item.description.slice(0, 39)}...</div>
                         ) : (
                           <div>{item.description}</div>
                         )}
-                      </Col>
+                      </div>
                       {/* altaki colda className='text-center mx-4' */}
-                      <Col xs={3} sm={2} md={2} lg={2} className='' style={{textAlign:'center '}}>
+                      <div xs={3} sm={2} md={2} lg={2} className='' style={{textAlign:'center '}}>
                         {item.price}₺
-                      </Col>
+                      </div>
                     </Row>
                   </Card.Text>
                 </Card>
