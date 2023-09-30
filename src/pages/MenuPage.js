@@ -3,6 +3,7 @@ import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap'
 import ItemModal from '../components/ItemModal';
 import '../cssFiles/MenuPage.css'
 import '../cssFiles/BirSaniy.css'
+import ItemList from '../components/ItemList';
 
 
 const MenuPage = () => {
@@ -68,24 +69,8 @@ const MenuPage = () => {
             <Card.Text>
               <ul class="kahvalti-items-list">
                 {kahvaltiItems.map((item, index) => (
-                  <li class="kahvalti-item" key={index}>
-                    <div class="item-image">
-                      <img src={item.img} alt="Product Image" />
-                    </div>
-                    <div class="item-details">
-                      <div class="item-header">{item.header}</div>
-                      <div class="item-description">
-                        {item.description.length > 55 ? (
-                          <span>{item.description.slice(0, 51)}...</span>
-                        ) : (
-                          <span>{item.description}</span>
-                        )}
-                      </div>
-                    </div>
-                    <div class="item-price">
-                      {item.price}₺
-                    </div>
-                  </li>
+                  <ItemList item={item}
+                  index={index} />
                 ))}
               </ul>
             </Card.Text>

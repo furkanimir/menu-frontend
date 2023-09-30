@@ -21,10 +21,12 @@ alo-si{
   .kahvalti-item .item-image {
     flex: 0 0 15%;
     flex-grow: 0;
+    height: auto;
+    width: auto;
   }
   
   .kahvalti-item .item-header {
-    color: yellow;
+    color: rgb(90, 90, 90);
     padding-bottom: 5px;
   }
   .kahvalti-item .item-image img {
@@ -42,5 +44,6 @@ alo-si{
     text-align: center;
     float: right;
     flex-grow: 0;
+    grid-area: right-top;
   }
   
