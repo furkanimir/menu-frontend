@@ -16,6 +16,7 @@ export const NavbarComp = () => {
                     <Nav className="me-auto ms-2">
                         <Nav.Link href="/"><i class="bi bi-house"></i> Home</Nav.Link>
                         <Nav.Link href="/menu"><i class="bi bi-postcard"></i> Menu</Nav.Link>
+                        <Nav.Link href="/login"><i class="bi bi-door-open"></i> Login</Nav.Link>
                         <Nav.Link href="/contact"><i class="bi bi-signpost"></i> Contact</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

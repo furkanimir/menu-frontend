@@ -7,7 +7,7 @@ function ItemList({ index, item }) {
                 <img src={item.img} alt="Product Image" />
             </div>
             <div class="item-details">
-                <div class="item-header">{item.header}</div>
+            <div class="item-header">{item.header}</div>                
                 <div class="item-description">
                     {item.description.length > 55 ? (
                         <span>{item.description.slice(0, 51)}...</span>

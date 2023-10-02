@@ -99,8 +99,6 @@ const MenuPage = () => {
                           {item.price} ₺
                         </Row>
                         <Row>
-
-
                         </Row>
                       </Col>
                     </Row>
