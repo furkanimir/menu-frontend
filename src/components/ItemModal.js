@@ -19,7 +19,7 @@ function ItemModal({ item, show, handleClose }) {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:8080/api/v1/menus/delete/${id}`, {
+      const response = await fetch(`https://first-render-qumf.onrender.com/api/v1/menus/delete/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ function ItemModal({ item, show, handleClose }) {
       if (response.status === 200) {
         console.log('Ürün başarıyla silindi.');
         handleClose();
-        // window.location.reload();
+        window.location.reload();
       } else {
         console.error('Ürün silinemedi. Sunucu yanıtı:', response.status);
       }
@@ -57,7 +57,7 @@ function ItemModal({ item, show, handleClose }) {
     }
 
     try {
-      const response = await fetch(`http://localhost:8080/api/v1/menus/ekle`, {
+      const response = await fetch(`https://first-render-qumf.onrender.com/api/v1/menus/ekle`, {
         method: 'PUT', // Güncelleme işlemi için PUT kullanılıyor.
         headers: {
           'Content-Type': 'application/json',
