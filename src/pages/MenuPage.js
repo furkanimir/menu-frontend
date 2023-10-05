@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Card, Col, Container, Image, Row } from 'react-bootstrap'
+import { Button, Card, Col, Container, Image, Row, Spinner } from 'react-bootstrap'
 import ItemModal from '../components/ItemModal';
 import '../cssFiles/MenuPage.css'
 import '../cssFiles/BirSaniy.css'
@@ -14,6 +14,8 @@ const MenuPage = () => {
   const apiUrl= 'https://first-render-qumf.onrender.com/api/v1/menus/all'
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [loaded, setLoaded] =useState(false);
+
 
   const handleShow = (item) => {
     setSelectedItem(item);
@@ -36,6 +38,7 @@ const MenuPage = () => {
       const json = await response.json();
       setData(json);
       console.log(data);
+      setLoaded(true);
     } catch (error) {
       console.error('Veri getirme hatasi:', error);
     }
@@ -67,14 +70,18 @@ const MenuPage = () => {
           <Card.Body>
             <Card.Title style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>Kahvaltılar</Card.Title>
             <Card.Text>
+              <div style={{alignItems:'center', justifyContent:'center'}}>
+              {loaded ? "" : <p>Free host kullandığım için verilerin getirilmesi uzun sürecektir <Spinner animation="border" variant="secondary" /> </p> }
+              </div>
               <ul class="kahvalti-items-list">
                 {kahvaltiItems.map((item, index) => (
                   <ItemList item={item}
-                  index={index} />
+                  index={index} hex={'#ff0000'}
+                  gradient={'linear-gradient(to right, rgba(189, 155, 60, 0.9), rgba(230, 203, 129, 0.8))'} />
                 ))}
               </ul>
             </Card.Text>
-            {/* <Button variant="primary" onClick={handleClick}>Go somewhere</Button> */}
+            <Button variant="primary" onClick={handleClick}>Go somewhere</Button>
           </Card.Body>
         </Card>
         {/* Salatalar */}

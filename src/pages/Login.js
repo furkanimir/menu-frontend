@@ -1,46 +1,69 @@
-import { Button } from 'bootstrap';
 import { useState } from 'react';
-import { Container } from 'react-bootstrap';
-import Form from 'react-bootstrap/Form';
+import { Form, Button, Col, Container, Row } from 'react-bootstrap';
+
 
 function Login() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const [username, setUsername] = useState('selam');
+    const [password, setPassword] = useState('parolayidegistirmeyin');
     const [isLogin, setIsLogin] = useState(false);
 
-    const handleUsernameChange = (event) => {
-        setUsername(event.target.value);
-    };
 
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-    };
 
     const handleSubmit = (event) => {
-        event.preventDefault();
 
-        if (username === 'BenDostum' && password === 'GercektenDostum') {
+
+        if (username === 'selam' && password === 'parolayidegistirmeyin') {
             setIsLogin(true); // Giriş başarılı ise logini türü yapüyürüz
+            console.log(isLogin);
         } else {
-            setError('Hatalı kullanıcı adı veya şifre.');
+            setIsLogin(false);
         }
     };
 
     return (
         <Container>
-            <Form>
-                <Form.Group className="mb-3" controlId="formGroupEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+            <Form >
+                <Form.Group className="d-flex justify-content-center" controlId="formGroupEmail">
+                    <div className='align-items-center' style={{ width: '80%' }}>
+                        <Row className='d-flex justify-content-center mt-5' >
+                            <Col className='' xs={3} sm={4} md={4}>
+                                <Form.Label >Kullanıcı adı</Form.Label>
+                            </Col>
+                            <Col xs={6} sm={8} md={8}>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="username"
+                                    aria-label="Disabled input example"
+                                    readOnly
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                />
+                            </Col>
+                        </Row>
+
+                        <Row className='d-flex justify-content-center my-2' >
+                            <Col xs={3} sm={4} md={4}>
+                                <Form.Label>Şifre  </Form.Label>
+                            </Col>
+                            <Col xs={6} sm={8} md={8}>
+                                <Form.Control
+                                    placeholder="username"
+                                    aria-label="Disabled input example"
+                                    type="password"
+                                    disabled
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                            </Col>
+
+                        </Row>
+                        <Row className='align-items-center'>
+                            <Button className='d-flex justify-content-center  mt-5' variant="success" style={{ width: '80%' }}
+                                onClick={() => { handleSubmit() }}>Giriş</Button>
+                        </Row>
+                    </div>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formGroupPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Giriş
-                </Button>
+
             </Form>
 
         </Container>

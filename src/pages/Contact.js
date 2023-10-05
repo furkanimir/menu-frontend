@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <div className='mx-3 my-2'>
       <Row className='mt-4'>
-        <Col className='container' style={{backgroundColor:'red'}}>
+        <Col className='container'>
         <p>düzenleme</p>
         </Col>
         <Col style={{backgroundColor:'blue'}}>
